@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SheSays{% endblock %}</title>
+    <meta name="description" content="Glassdoor for women in tech">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    {% load staticfiles %}
+    <link href="{% static "stylesheets/application.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

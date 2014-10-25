@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+/* Fix user-agent */
+* {
+  box-sizing: border-box; }
+
+html {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased; }
+
+html, input {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none;
+  word-wrap: break-word; }
+
+b {
+  color: #FF0080;
+  font-weight: 700; }
+
+.thin-text {
+  font-weight: 300; }
+
+.medium-text {
+  font-weight: 400; }
+
+.navbar-push {
+  margin-top: 100px; }
+
+.navbar {
+  height: 60px;
+  margin-bottom: 35px;
+  padding-top: 5px; }
+
+/* Pages */
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.page {
+  height: 100%;
+  position: absolute;
+  width: 100%; }
+
+/* Login Page */
+.login.page {
+  color: #fff;
+  background-color: #222; }
+
+.login.page #company {
+  max-width: 200px;
+  outline: none;
+  border: none; }
+
+.login.page .form {
+  height: 100px;
+  margin-top: 100px;
+  width: 100%; }
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: auto;
+  display: inline-block; }
+
+.login.page .title {
+  font-size: 40px;
+  font-weight: 700; }
+
+.login.page .subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 0; }
+
+.login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px; }
+
+.login.page .title, .login.page .usernameInput {
+  color: #efefef;
+  font-weight: 400; }
+
+.login.page .header {
+  margin-bottom: 30px; }
+
+.authform {
+  padding-top: 30px;
+  max-width: 320px;
+  margin: 0 auto; }
+
+/*social links*/
+.inline-links li {
+  display: inline-block;
+  margin-left: 15px; }
+
+.social-links li > a {
+  color: #fff; }
+
+.social-links li > a:visited {
+  color: #fff; }
+
+.social-links li > a:hover {
+  color: rgba(255, 0, 128, 0.8); }
+
+/* Chat page */
+.chat.page {
+  display: none; }
+
+/* Font */
+.messages {
+  font-size: 150%; }
+
+.inputMessage {
+  font-size: 100%; }
+
+.log {
+  color: gray;
+  font-size: 70%;
+  margin: 5px;
+  text-align: center; }
+
+/* forms */
+#name {
+  border: 0;
+  padding: 0;
+  outline: none;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 20px 0; }
+
+#content {
+  border: 0;
+  overflow: hidden;
+  padding: 0;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  min-height: 200px;
+  width: 100%; }

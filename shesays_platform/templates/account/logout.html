@@ -1,0 +1,22 @@
+{% extends 'site_base.html' %}
+
+{% block title %}Log out{% endblock %}
+
+{% block content %}
+<div class="container authform">
+  <div class="row">
+    <div class="span12">
+      <form method="POST" action="{% url 'account_logout' %}" class="form-horizontal">
+        <legend>Log out</legend>
+        <fieldset>
+          {% csrf_token %}
+          <p>Are you sure you want to log out?</p>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Log out</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
