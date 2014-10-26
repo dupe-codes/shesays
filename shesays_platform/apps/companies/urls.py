@@ -9,5 +9,5 @@ COMPANY_ID_PATTERN = '(?P<company_id>[1-9][0-9]*)'
 
 urlpatterns = patterns('',
 
-    url(r'{}'.format(COMPANY_ID_PATTERN), views.display_company, name='display_company'),
+    url(r'{}/$'.format(COMPANY_ID_PATTERN), views.display_company, name='display_company'),
 )
