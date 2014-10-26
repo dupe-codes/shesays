@@ -13,5 +13,5 @@ def create_review(request, company_id):
     """ Creates a new review for the given company """
     print 'Redirecting back to company ' + company_id
     # TODO: Figure out better way to handle redirects
-    return redirect('/company/{}'.format(company_id))
+    return redirect('/companies/{}'.format(company_id))
 

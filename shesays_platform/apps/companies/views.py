@@ -26,6 +26,6 @@ def create_company(request):
         new_company = Company(parameters)
         new_company.save()
 
-        return redirect('/company/{}'.format(new_company.id))
+        return redirect('/companies/{}'.format(new_company.id))
     else:
         return redirect('/')
