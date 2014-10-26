@@ -13,7 +13,7 @@
         {% csrf_token %}
         {{ form|as_bootstrap }}
         {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          <input class="form-control" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <div class="form-actions">
           <a href="{% url 'account_password_reset' %}" class="btn">Forgot your password?</a>

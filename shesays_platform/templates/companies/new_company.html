@@ -1,7 +1,19 @@
 {% extends 'site_base.html' %}
 
+{% load bootstrap_tags %}
+
 {% block title %}New Company{% endblock %}
 
 {% block content %}
-  <h1>We create a new company here!</h1>
+<div class="authform">
+  <div class="row ">
+      <form method="POST" action="{% url 'new_company' %}" autocapitalize="off">
+        <legend> Add a new company</legend>
+        {% csrf_token %}
+        {{ form|as_bootstrap }}
+        <button type="submit" class="btn btn-primary">Add Company</button>
+      </form>
+  </div>
+</div>
+  
 {% endblock %}

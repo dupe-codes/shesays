@@ -1,0 +1,27 @@
+.company-bubble {
+  position: fixed;
+  top: 100px;
+  left: 50px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px; }
+  @media screen and (max-width: 320px) {
+    .company-bubble {
+      position: static; } }
+  .company-bubble img {
+    max-width: 100%; }
+  .company-bubble .logo {
+    max-width: 150px;
+    height: auto;
+    margin-left: 0;
+    padding: 4px;
+    border: 2px solid gray; }
+  .company-bubble h4 {
+    color: gray;
+    margin-top: 0;
+    font-weight: 200; }
+
+.reviews-wrapper li {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px; }
