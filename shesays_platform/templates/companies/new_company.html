@@ -7,7 +7,7 @@
 {% block content %}
 <div class="authform">
   <div class="row ">
-      <form method="POST" action="{% url 'new_company' %}" autocapitalize="off">
+      <form method="POST" action="{% url 'create_company' %}" autocapitalize="off">
         <legend> Add a new company</legend>
         {% csrf_token %}
         {{ form|as_bootstrap }}
@@ -15,5 +15,5 @@
       </form>
   </div>
 </div>
-  
+
 {% endblock %}

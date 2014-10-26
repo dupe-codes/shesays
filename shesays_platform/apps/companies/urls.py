@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     url(r'{}/$'.format(COMPANY_ID_PATTERN), views.display_company, name='display_company'),
 
     #custom search url
-    url('^/search/$', views.search, name='company_search'),
+    url('^search/$', views.search, name='company_search'),
 
     # Displays form for creating a new company
     # TODO: Replace this with mechanism of checking crunchbase for company info

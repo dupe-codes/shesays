@@ -1,6 +1,5 @@
 """
-Defines the Company model and all of its
-associated functions.
+Defines the Company model and all of its associated functions.
 """
 
 from django.db import models
