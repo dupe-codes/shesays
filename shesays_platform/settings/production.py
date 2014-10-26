@@ -36,7 +36,8 @@ ALLOWED_HOSTS = []
 # List of all SheSays specific Django apps
 SHESAYS_APPS = (
     'shesays_platform.apps.home',
-    'shesays_platform.apps.companies'
+    'shesays_platform.apps.companies',
+    'shesays_platform.apps.reviews'
 )
 
 THIRD_PARTY_APPS = (
