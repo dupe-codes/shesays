@@ -33,19 +33,30 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = (
+# List of all SheSays specific Django apps
+SHESAYS_APPS = (
+    'shesays_platform.apps.home',
+    'shesays_platform.apps.companies'
+)
+
+THIRD_PARTY_APPS = (
+    'account',
+    'pinax_theme_bootstrap',
+    'bootstrapform',
+    'django_forms_bootstrap'
+)
+
+DJANGO_DEFAULT_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'account',
-    'pinax_theme_bootstrap',
-    'bootstrapform',
-    'django_forms_bootstrap',
-    'shesays_platform.apps.home'
+    'django.contrib.staticfiles'
 )
+ 
+
+INSTALLED_APPS = SHESAYS_APPS + THIRD_PARTY_APPS + DJANGO_DEFAULT_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

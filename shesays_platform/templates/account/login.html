@@ -1,0 +1,26 @@
+{% extends 'site_base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block title %}Log in {% endblock %}
+
+{% block content %}
+<div class="authform">
+  <div class="row">
+    <div class="span8">
+      <form method="POST" action="{% url 'account_login' %}" autocapitalize="off" class="form-horizontal">
+        <legend>Log in to an existing account</legend>
+        {% csrf_token %}
+        {{ form|as_bootstrap }}
+        {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="form-actions">
+          <a href="{% url 'account_password_reset' %}" class="btn">Forgot your password?</a>
+          <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

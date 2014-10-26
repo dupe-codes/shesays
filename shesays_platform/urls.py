@@ -12,5 +12,8 @@ urlpatterns = patterns('',
     url(r'^$', 'shesays_platform.apps.home.views.index'),
 
     # Add urls for user accounts
-    url(r'^account/', include('account.urls'))
+    url(r'^account/', include('account.urls')),
+
+    # urls for rendering company views
+    url(r'^company/', include('shesays_platform.apps.companies.urls'))
 )
