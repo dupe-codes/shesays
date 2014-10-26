@@ -23,7 +23,7 @@
     <div class="form">
       <div class="title">What did <b>she</b> say</div>
       <div class="title">
-      <form method="GET" action="/search" autocapitalize="off" id="company-input">
+      <form method="GET" action="{% url 'company_search' %}" autocapitalize="off" id="company-input">
         <div id="company-prefix"><b>@</b></div>
         <input type="text" name="q" autocomplete="off", id="company-name" />
         <ul class="bxslider">
