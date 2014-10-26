@@ -5,9 +5,6 @@ from django.contrib import admin
 COMPANY_ID_PATTERN = '(?P<company_id>[1-9][0-9]*)'
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'shesays.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 
@@ -18,8 +15,8 @@ urlpatterns = patterns('',
     url(r'^account/', include('account.urls')),
 
     # urls for rendering company views
-    url(r'^company/', include('shesays_platform.apps.companies.urls')),
+    url(r'^companies/', include('shesays_platform.apps.companies.urls')),
 
     # urls for nested company reviews
-    url(r'^company/{}/reviews/'.format(COMPANY_ID_PATTERN), include('shesays_platform.apps.reviews.urls')),
+    url(r'^companies/{}/reviews/'.format(COMPANY_ID_PATTERN), include('shesays_platform.apps.reviews.urls')),
 )
