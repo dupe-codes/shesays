@@ -48,7 +48,8 @@ ul {
   word-wrap: break-word;
 }
 
-b{
+//repurposes the bold to be the primary 
+b {
   color: #FF0080;
   font-weight: 700;
 }
@@ -69,73 +70,6 @@ b{
   height: 60px;
   margin-bottom: 35px;
   padding-top: 5px;
-}
-/* Pages */
-
-.pages {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.page {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-/* Login Page */
-
-.login.page {
-  color: #fff;
-  background-color: #222;
-}
-
-.login.page #company{
-  max-width: 200px;
-  outline: none;
-  border: none;
-}
-
-.login.page .form {
-  height: 100px;
-  margin-top: 100px;
-  width: 100%;
-}
-
-.login.page .form .usernameInput {
-  background-color: transparent;
-  border: none;
-  padding-bottom: 15px;
-  text-align: center;
-  width: auto;
-  display: inline-block;
-}
-
-.login.page .title {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-.login.page .subtitle {
-  font-size: 24px;
-  font-weight: 400;
-  margin-top: 0;
-}
-
-.login.page .usernameInput {
-  font-size: 200%;
-  letter-spacing: 3px;
-}
-
-.login.page .title, .login.page .usernameInput {
-  color: #efefef;
-  font-weight: 400;
-}
-
-.login.page .header {
-  margin-bottom: 30px;
 }
 
 .authform {
@@ -159,28 +93,6 @@ b{
 .social-links li > a:hover {
   color: rgba(255, 0, 128, 0.8);
 }  
-/* Chat page */
-
-.chat.page {
-  display: none;
-}
-
-/* Font */
-
-.messages {
-  font-size: 150%;
-}
-
-.inputMessage {
-  font-size: 100%;
-}
-
-.log {
-  color: gray;
-  font-size: 70%;
-  margin: 5px;
-  text-align: center;
-}
 
 /* forms */
 #name {

@@ -10,4 +10,7 @@ COMPANY_ID_PATTERN = '(?P<company_id>[1-9][0-9]*)'
 urlpatterns = patterns('',
 
     url(r'{}'.format(COMPANY_ID_PATTERN), views.display_company, name='display_company'),
+
+    #custom search url
+    url('/search', views.search, name='display_company'),
 )

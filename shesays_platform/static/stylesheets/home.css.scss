@@ -1,0 +1,72 @@
+body {
+  color: #fff;
+  background-color: #222;
+}
+
+#company {
+  max-width: 200px;
+  outline: none;
+  border: none;
+}
+
+#company-input {
+  outline: 0;
+  display: inline-block;
+  border: 0;
+  background-color: transparent;
+  font-size: inherit;
+  color: white;
+  input {
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+  }
+}
+#company-prefix {
+  position: absolute;
+}
+#company-name {
+  position: absolute;
+  margin-left: 35px;
+  z-index:20;
+}
+
+.form {
+  height: 100px;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.form .usernameInput {
+  background-color: transparent;
+  border: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.title, .usernameInput {
+  color: #efefef;
+  font-weight: 400;
+}
+
+.header {
+  margin-bottom: 30px;
+}
