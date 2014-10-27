@@ -1,5 +1,44 @@
 {% extends 'site_base.html' %}
 
 {% block content %}
-<h1>{{ company_id }}</h1>
+
+<div class="container navbar-push">
+  <div class="row wrapper">
+
+    <div class="col-md-3">
+      <div class="company-bubble">
+        <h2>{{ company.name }}</h2>
+        <a class="btn btn-primary" id="new-review" href="{% url 'new_review' company_id=company.id %}">
+          <strong>review</strong>++
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-8 reviews-wrapper">
+      <div>
+        <ul class="reviews">
+          {% if company.reviews.all %}
+            {% for review in company.reviews.all %}
+              <li>
+                <p>{{ review.content }}</p>
+                <p class="pull-left">Sentiment: <b>{{review.sentiment_label}}</b></p>
+                <p class="pull-right"><b>{{ review.created_at }}</b></p>
+                <br/>
+              </li>
+            {% endfor %}
+          {% else %}
+            <li>
+              <p>
+                No reviews for <b>{{ company.name }}</b> have been added.
+                <a href="{% url 'new_review' company_id=company.id %}">Add</a> your own review.
+              </p>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 {% endblock %}

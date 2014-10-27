@@ -1,7 +1,18 @@
 {% extends 'site_base.html' %}
 
+{% load bootstrap_tags %}
+
 {% block title %}New Review{% endblock %}
 
 {% block content %}
-  <h1>Review for company: {{ company_id }}</h1>
+<div class="authform">
+  <div class="row">
+    <form method="POST" action="{% url 'create_review' company.id %}" autocapitalize="off">
+      <legend>New review for <b>{{ company.name }}</b></legend>
+      {% csrf_token %}
+      {{ form|as_bootstrap }}
+      <button type="submit" class="btn btn-primary">Add Review</button>
+    </form>
+  </div>
+</div>
 {% endblock %}

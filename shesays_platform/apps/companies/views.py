@@ -5,6 +5,7 @@ Logic for handling and interacting with companies
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
 
 from utils.forms import CompanyForm
 from models import Company
@@ -13,7 +14,13 @@ from models import Company
 
 def display_company(request, company_id):
     """ Displays a single company's profile page """
-    return render_to_response('companies/company_profile.html', {'company_id': company_id})
+    try:
+        company = Company.objects.get(id=company_id)
+    except Company.DoesNotExist:
+        # If no company exists with given id, redirect to home page
+        return redirect('/')
+
+    return render_to_response('companies/company_profile.html', {'company': company})
 
 def search(request):
     """
@@ -32,6 +39,7 @@ def search(request):
     except Company.DoesNotExist:
         return _create_new_company(company_name)
 
+@login_required
 @csrf_protect
 def new_company(request):
     """ Renders view for creating a new company """
