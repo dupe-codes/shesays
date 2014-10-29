@@ -13,6 +13,11 @@ from models import Company
 
 # TODO: Add logging (when new company created)
 
+def display_companies(request):
+    """ Displays all companies saved in our database """
+    companies = Company.objects.all()
+    return render_to_response('companies/companies_list.html', {'companies': companies})
+
 def display_company(request, company_id):
     """ Displays a single company's profile page """
     try:

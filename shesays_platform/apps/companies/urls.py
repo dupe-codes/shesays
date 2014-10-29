@@ -8,6 +8,10 @@ import views
 COMPANY_ID_PATTERN = '(?P<company_id>[1-9][0-9]*)'
 
 urlpatterns = patterns('',
+
+    # Displays a list of all companies
+    url(r'^$', views.display_companies, name='display_companies'),
+
     # Displays a specific company
     url(r'{}/$'.format(COMPANY_ID_PATTERN), views.display_company, name='display_company'),
 

@@ -1,0 +1,23 @@
+{% extends 'site_base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row wrapper">
+    <div class="col-md-8">
+      <h1>All Companies</h1>
+    </div>
+  </div>
+
+  {% for company in companies %}
+    <div class="row wrapper">
+      <div class="col-md-5">
+        <a href="/companies/{{ company.id }}/">{{ company.name }}</a>
+      </div>
+      <div class="col-md-3">
+        <p>Number of reviews: {{ company.reviews.all|length }}</p>
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}
