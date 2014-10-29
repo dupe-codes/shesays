@@ -11,7 +11,8 @@ from utils.forms import CompanyForm
 from utils.api import CrunchbaseAPI
 from models import Company
 
-# TODO: Add logging (when new company created)
+import logging
+logger = logging.getLogger(__name__)
 
 def display_companies(request):
     """ Displays all companies saved in our database """
@@ -63,6 +64,8 @@ def create_company(request):
         # TODO: Figure out validations
         new_company = Company(name=request.POST['name'])
         new_company.save()
+
+        logger.info('New company created: {}'.format(company_name))
         return redirect('/companies/{}'.format(new_company.id))
     else:
         return redirect('/')
@@ -86,6 +89,8 @@ def _create_new_company(company_name):
     if response['exists']:
         new_company = Company(name=company_name)
         new_company.save()
+
+        logger.info('New company created: {}'.format(company_name))
         return redirect('/companies/{}'.format(new_company.id))
     else:
         return redirect('/')

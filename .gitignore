@@ -56,3 +56,7 @@ target/
 # Ignore editor artifacts
 *.swp
 *~
+
+# Ignore any logging files
+shesays_platform/logs/*
+*.log
