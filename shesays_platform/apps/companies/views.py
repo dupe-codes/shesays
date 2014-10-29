@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 
 from utils.forms import CompanyForm
+from utils.api import CrunchbaseAPI
 from models import Company
 
 # TODO: Add logging (when new company created)
@@ -75,5 +76,11 @@ def _create_new_company(company_name):
     to our database. If not, we'll assume the given company name is
     faulty, and return an appropriate message to the user.
     """
-    print 'Creating new company: ' + company_name
-    return redirect('/')
+    crunchbase = CrunchbaseAPI()
+    response = crunchbase.get_company_info(company_name)
+    if response['exists']:
+        new_company = Company(name=company_name)
+        new_company.save()
+        return redirect('/companies/{}'.format(new_company.id))
+    else:
+        return redirect('/')
