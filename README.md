@@ -16,3 +16,18 @@ To set up locally for development, follow these steps:
     - `pip install -r requirements.txt`
 5. Run the server to confirm everything is working.
 6. Begin hacking!
+
+TODOs
+-----
+- Revamp the landing page
+    - Improve the search box, make it more obvious
+    - Focus on those who are coming to the site to see reviews
+    - Show recent reviews in some sort of feed
+    - Replace sentence
+- automatic tweeting of reviews when they're added
+- display gender ratios for each company
+- Implement SheSays score
+- Email invitation system
+    - Anonymously invite people to leave a review
+    - Ask them to send out invites after they review
+    - Maybe give option to invite people even if they didn't leave a review themselves

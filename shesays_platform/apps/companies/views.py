@@ -39,7 +39,7 @@ def search(request):
     the request to create_company
     """
     params = request.GET
-    company_name = params['q']
+    company_name = params['q'].strip().lower()
     try:
         company = Company.objects.get(name=company_name)
         return redirect('/companies/{}/'.format(company.id))
