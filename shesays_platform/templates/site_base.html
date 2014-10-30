@@ -11,6 +11,7 @@
     <link href="{% static "stylesheets/application.css" %}" rel="stylesheet">
   </head>
   <body>
+    {% include 'partials/navigation.html' %}
     {% block content %}
     {% endblock %}
     <script src="{% static "javascripts/jquery-1.11.1.min.js" %}"/>

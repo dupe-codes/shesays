@@ -1,0 +1,7 @@
+{% if user.is_authenticated %}
+  <li><a href="{% url 'account_settings' %}">Edit account</a></li>
+  <li><a href="{% url 'account_logout' %}">Sign out</a></li>
+{% else %}
+  <li><a href="{% url 'account_login' %}">Sign in</a></li>
+  <li><a href="{% url 'account_signup' %}">Sign up</a></li>
+{% endif %}

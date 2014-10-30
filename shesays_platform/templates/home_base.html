@@ -12,6 +12,9 @@
     <link href="{% static "stylesheets/home.css" %}" rel="stylesheet">
   </head>
   <body>
+    <!-- Add the navigation bar -->
+    {% include 'partials/navigation.html' %}
+
     {% block content %}
     {% endblock %}
     <script src="{% static "javascripts/jquery-1.11.1.min.js" %}" type="text/javascript"></script>

@@ -56,10 +56,14 @@ class CrunchbaseAPI(APIModule):
 
         if response['status_code'] == 200:
             company_list = response['content']['data']['items']
-
-            # Right now I assume the company exists if the returned list
-            # isn't empty. Is there a better way?
-            return {'exists': False if not company_list else True}
+            if company_list:
+                # Grab the first company from the list. This'll be the most
+                # likely candidate
+                company = company_list[0]
+                return {'exists': True, 'name': company['name']}
+            else:
+                # Assume company doesn't exist
+                return {'exists': False}
         else:
             # We encountered an error - we should raise an exception and handle
             # it in the outer scope for error logging, but for now let's

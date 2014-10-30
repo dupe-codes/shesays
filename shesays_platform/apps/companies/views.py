@@ -87,10 +87,11 @@ def _create_new_company(company_name):
     crunchbase = CrunchbaseAPI()
     response = crunchbase.get_company_info(company_name)
     if response['exists']:
-        new_company = Company(name=company_name)
+        # Create the company using the name returned by crunchbase
+        new_company = Company(name=response['name'])
         new_company.save()
 
-        logger.info('New company created: {}'.format(company_name))
+        logger.info('New company created: {}'.format(response['name']))
         return redirect('/companies/{}'.format(new_company.id))
     else:
         return redirect('/')
