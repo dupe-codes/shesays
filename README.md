@@ -16,3 +16,11 @@ To set up locally for development, follow these steps:
     - `pip install -r requirements.txt`
 5. Run the server to confirm everything is working.
 6. Begin hacking!
+
+Cloud9
+------
+
+To get setup on cloud9 http://c9.io and use sqlite:
+
+1. python manage.py syncdb
+2. python manage.py runserver $IP:$PORT --settings=shesays_platform.settings.development
