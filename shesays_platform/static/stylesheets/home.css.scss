@@ -3,6 +3,17 @@ body {
   background-color: #222;
 }
 
+//toggling styles of the navbar
+.navbar-brand{
+  display: none;
+}
+.nav.navbar-nav {
+  margin-left: 40%;
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
 #company {
   max-width: 200px;
   outline: none;
