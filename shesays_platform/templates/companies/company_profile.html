@@ -1,11 +1,11 @@
-{% extends 'site_base.html' %}
+{% extends 'companies_base.html' %}
 
 {% block content %}
 
 <div class="container navbar-push">
   <div class="row wrapper">
 
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <div class="company-bubble">
         <h2>{{ company.name }}</h2>
         <a class="btn btn-primary" id="new-review" href="{% url 'new_review' company_id=company.id %}">
@@ -14,15 +14,15 @@
       </div>
     </div>
 
-    <div class="col-md-8 reviews-wrapper">
+    <div class="col-sm-8 reviews-wrapper">
       <div>
         <ul class="reviews">
           {% if company.reviews.all %}
             {% for review in company.reviews.all %}
               <li>
                 <p>{{ review.content }}</p>
-                <p class="pull-left">Sentiment: <b>{{review.sentiment_label}}</b></p>
-                <p class="pull-right"><b>{{ review.created_at }}</b></p>
+                <span class="pull-left">Sentiment: <b>{{review.sentiment_label}}</b></span>
+                <span class="pull-right"><b>{{ review.created_at }}</b></span>
                 <br/>
               </li>
             {% endfor %}

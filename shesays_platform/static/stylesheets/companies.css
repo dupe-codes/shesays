@@ -5,7 +5,7 @@
   width: 300px;
   border-radius: 5px;
   padding: 10px; }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 770px) {
     .company-bubble {
       position: static; } }
   .company-bubble img {

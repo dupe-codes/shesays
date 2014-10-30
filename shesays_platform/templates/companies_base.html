@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SheSays{% endblock %}</title>
+    <meta name="description" content="Glassdoor for women in tech">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {% load staticfiles %}
+    <link href="{% static "stylesheets/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "stylesheets/application.css" %}" rel="stylesheet">
+    <link href="{% static "stylesheets/companies.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Add the navigation bar -->
+    {% include 'partials/navigation.html' %}
+
+    {% block content %}
+    {% endblock %}
+    <script src="{% static "javascripts/jquery-1.11.1.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "javascripts/jquery.bxslider.min.js" %}" type="text/javascipt"></script>
+
+  </body>
+</html>
