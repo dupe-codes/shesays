@@ -22,5 +22,10 @@ Cloud9
 
 To get setup on cloud9 http://c9.io and use sqlite:
 
-1. python manage.py syncdb
-2. python manage.py runserver $IP:$PORT --settings=shesays_platform.settings.development
+1. Clone the shesays repo (Under my projects)
+2. Open the workspace
+3. `pip install -r requirements.txt`
+4. `mkdir logs`
+5. `mkdir shesays_platform/logs`
+6. `python manage.py syncdb --settings=shesays_platform.settings.development`
+7. `python manage.py runserver $IP:$PORT --settings=shesays_platform.settings.development`
