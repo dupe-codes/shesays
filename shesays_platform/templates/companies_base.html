@@ -19,6 +19,55 @@
     {% endblock %}
     <script src="{% static "javascripts/jquery-1.11.1.min.js" %}" type="text/javascript"></script>
     <script src="{% static "javascripts/jquery.bxslider.min.js" %}" type="text/javascipt"></script>
+    <script>
+      $(document).ready(function() {
+        var company_id_map = {
+          "microsoft": "1035",
+          "amazon": "1586",
+          "google": "1441",
+          "facebook": "10667",
+          "twitter": "96622",
+          "oracle": "1028"
+        }
+        var company_id = company_id_map[$("#company-name").text().toLowerCase()];
+        var query = {
+          "query": {
+            "filtered": {
+              "query": {
+                "bool": {
+                  "should": [
+                    {
+                      "query_string": {
+                        "query": company_id
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "facets": {
+            "tags": {
+              "terms": {
+                "field": "gender",
+                "size": 10
+              }
+            }
+          },
+          "size": 0
+        };
+        $.ajax({
+          url: "http://elasticsearch.kibana.co/li/_search",
+          type: "POST",
+        crossDomain: true,
+                    dataType: 'json',
+                    data: JSON.stringify(query)
+        }).done(function(response) {
+          var gender_ratio = Math.ceil(response.facets.tags.terms[1].count / response.facets.tags.total * 100);
+          $("#gender-ratio").html(gender_ratio);
+        });
+      });
+    </script>
 
   </body>
 </html>
