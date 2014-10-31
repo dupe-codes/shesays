@@ -10,6 +10,7 @@ class Review(models.Model):
     content = models.TextField(default='')
     created_at = models.DateTimeField(auto_now_add=True)
     sentiment_label = models.CharField(max_length=30, default='neutral')
+    sentiment_score = models.FloatField(default=0)
 
     # Define a many-to-one relationship with companies
     company = models.ForeignKey(Company, related_name='reviews')
