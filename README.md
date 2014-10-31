@@ -3,8 +3,8 @@ shesays
 
 SheSays is an anonymous forum to rate and review tech companies based on women’s experiences. By focusing on these voices, we provide a service to those entering tech and use often overlooked stories to take inclusive workspaces from voluntary to essential.
 
-Dev Setup
----------
+## Dev Setup
+
 To set up locally for development, follow these steps:
 
 1. Git pull this repo
@@ -17,8 +17,7 @@ To set up locally for development, follow these steps:
 5. Run the server to confirm everything is working.
 6. Begin hacking!
 
-Cloud9
-------
+## Cloud9 (Recommended)
 
 To get setup on cloud9 http://c9.io and use sqlite:
 
@@ -29,3 +28,4 @@ To get setup on cloud9 http://c9.io and use sqlite:
 5. `mkdir shesays_platform/logs`
 6. `python manage.py syncdb --settings=shesays_platform.settings.development`
 7. `python manage.py runserver $IP:$PORT --settings=shesays_platform.settings.development`
+8. Begin hacking!
