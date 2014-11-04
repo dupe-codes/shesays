@@ -2,12 +2,12 @@
 Logic for handling company reviews created by users.
 """
 
-from django.shortcuts import render_to_response, redirect
-from django.template import RequestContext
+from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 
+from shesays_platform.apps.utilities.view_utils import render_response
 from shesays_platform.apps.companies.models import Company
 from models import Review
 from utils.forms import ReviewForm
@@ -24,10 +24,8 @@ def new_review(request, company_id):
         redirect('/')
 
     form = ReviewForm()
-    return render_to_response(
-        'reviews/new_review.html',
-        {'company': company, 'form': form},
-        context_instance=RequestContext(request),
+    return render_response(request, 'reviews/new_review.html',
+        {'company': company, 'form': form}
     )
 
 @require_POST
