@@ -83,7 +83,7 @@ def _create_new_company(company_name):
         # TODO: We should add our own checks.. so a search for '*' doesn't give
         # back 'Google'
         # Or maybe we shouldn't let crunchbase spellcheck?
-        new_company = Company(name=response['name'])
+        new_company = Company(name=response['name'].lower())
         new_company.save()
 
         logger.info('New company created: {}'.format(response['name']))
