@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 
 from shesays_platform.apps.utilities.view_utils import render_response
+from shesays_platform.apps.analytics.scoring import get_shesays_score
 
 from utils.forms import CompanyForm
 from utils.api import CrunchbaseAPI
@@ -28,7 +29,11 @@ def display_company(request, company_id):
         # If no company exists with given id, redirect to home page
         return redirect('/')
 
-    return render_response(request, 'companies/company_profile.html', {'company': company})
+    data = {
+        'company': company,
+        'score': get_shesays_score(company),
+    }
+    return render_response(request, 'companies/company_profile.html', data)
 
 def search(request):
     """

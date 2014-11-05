@@ -8,6 +8,7 @@
     <div class="col-sm-3">
       <div class="company-bubble">
         <h2 id="company-name">{{ company.name }}</h2>
+        <h4>shesays score: {{ score }}</h4>
         <h4>Gender ratio: <b id="gender-ratio">?</b>/100</h4>
         <a class="btn btn-primary" id="new-review" href="{% url 'new_review' company_id=company.id %}">
           <strong>review</strong>++
