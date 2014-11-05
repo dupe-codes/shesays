@@ -19,4 +19,7 @@ urlpatterns = patterns('',
 
     # urls for nested company reviews
     url(r'^companies/{}/reviews/'.format(COMPANY_ID_PATTERN), include('shesays_platform.apps.reviews.urls')),
+
+    # urls for the invitation system
+    url(r'^invite/', include('shesays_platform.apps.invitations.urls')),
 )

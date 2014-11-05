@@ -40,6 +40,7 @@ SHESAYS_APPS = (
     'shesays_platform.apps.reviews',
     'shesays_platform.apps.utilities',
     'shesays_platform.apps.analytics',
+    'shesays_platform.apps.invitations',
 )
 
 THIRD_PARTY_APPS = (
