@@ -58,7 +58,6 @@ target/
 *~
 
 # Ignore any logging files
-shesays_platform/logs/*
 *.log
 .c9
 
