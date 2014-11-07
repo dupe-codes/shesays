@@ -61,3 +61,6 @@ target/
 shesays_platform/logs/*
 *.log
 .c9
+
+# Ignore deployment stuff
+deployment/*
