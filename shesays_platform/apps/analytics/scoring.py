@@ -24,5 +24,5 @@ def get_shesays_score(company):
     if avg_sentiment_score is None:
         return None
     else:
-        # Return the score on a scale out of 100, rounded to 2 decimal points
-        return round(avg_sentiment_score*100, 2)
+        # Return the average score, rounded to 2 decimal points
+        return round(avg_sentiment_score, 2)

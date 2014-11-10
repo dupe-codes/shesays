@@ -19,13 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '-@wbpgamqi4#a8b86&nd(q^2(qhix1au+tgr79dnmjl7$377u%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-# TODO: Need to make development.py settings and move this into it
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -94,21 +87,6 @@ ROOT_URLCONF = 'shesays_platform.urls'
 
 WSGI_APPLICATION = 'shesays_platform.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-"""
-TODO: Move this into local_dev settings file
-removing for now as I try to figure out deploying...
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shesays_dev',
-        'USER': 'shesays'
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

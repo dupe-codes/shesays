@@ -37,20 +37,22 @@ def display_company(request, company_id):
 
 def search(request):
     """
-    Searches for a company within our database.
+    Searches for a company given a user search query
 
     A company name to search for is expected in the request parameters.
-    If a matching company is found, redirects to the company page.
-    If no matching company exists, attempts to create the page by forwarding
-    the request to create_company
+    If a matching company is found in the db, redirects to the company page.
+    If no matching company already exists, attempts to add the company to our db
+    using the appropriate APIs
     """
     params = request.GET
     company_name = params['q'].strip().lower()
     try:
+        # See if we have an exact match in the database already
+        # If we do, great! cuts down on network traffic
         company = Company.objects.get(name=company_name)
         return redirect('/companies/{}/'.format(company.id))
     except Company.DoesNotExist:
-        return _create_new_company(company_name)
+        return _find_company(company_name)
 
 @login_required
 @csrf_protect
@@ -71,6 +73,29 @@ def create_company(request):
 # Company Helper Functions
 # ------------------------
 
+def _find_company(company_name):
+    """
+    Queries the crunchbase API to find the given company
+    """
+    crunchbase = CrunchbaseAPI()
+    response = crunchbase.get_company_info(company_name)
+    if response['exists']:
+        # grab and use the name given back by crunchbase
+        company_name = response['name'].lower()
+        try:
+            # See if we already have an entry for the company
+            company = Company.objects.get(name=company_name)
+            return redirect('/companies/{}/'.format(company.id))
+        except Company.DoesNotExist:
+            new_company = Company(name=company_name)
+            new_company.save()
+
+            logger.info('New company created: {}'.format(company_name))
+            return redirect('/companies/{}'.format(new_company.id))
+    else:
+        # Company doesn't exist, redirect to homepage
+        return redirect('/')
+
 def _create_new_company(company_name):
     """
     Adds a new record for the given company name to our database.
@@ -88,10 +113,17 @@ def _create_new_company(company_name):
         # TODO: We should add our own checks.. so a search for '*' doesn't give
         # back 'Google'
         # Or maybe we shouldn't let crunchbase spellcheck?
-        new_company = Company(name=response['name'].lower())
-        new_company.save()
+        company_name = response['name'].lower()
 
-        logger.info('New company created: {}'.format(response['name']))
-        return redirect('/companies/{}'.format(new_company.id))
+        try:
+            # If company already exists, redirect to it
+            company = Company.objects.get(name=company_name)
+            redirect('/companies/{}'.format(new_company.id))
+        except Company.DoesNotExist:
+            new_company = Company(name=company_name)
+            new_company.save()
+
+            logger.info('New company created: {}'.format(company_name))
+            return redirect('/companies/{}'.format(new_company.id))
     else:
         return redirect('/')

@@ -9,7 +9,7 @@ into global django settings module
 SENTIMENT_LABELS = ['positive', 'neutral', 'negative']
 
 SENTIMENT_SCORES = {
-    'positive': 1.0,
-    'neutral': 0.0,
-    'negative': -1.0,
+    'positive': 100,
+    'neutral': 50,
+    'negative': 0,
 }
