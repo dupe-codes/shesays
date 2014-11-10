@@ -27,10 +27,17 @@ body {
   background-color: transparent;
   font-size: inherit;
   color: white;
+
   input {
     background-color: transparent;
     outline: 0;
     border: 0;
+    border-bottom: 2px solid #FF0080;
+  }
+
+  .bxslider {
+    display: none;
+    padding-left: 0;
   }
 }
 #company-prefix {
@@ -38,7 +45,6 @@ body {
 }
 #company-name {
   position: absolute;
-  margin-left: 35px;
   z-index:20;
 }
 

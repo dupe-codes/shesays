@@ -63,3 +63,6 @@ target/
 
 # Ignore deployment stuff
 deployment/*
+
+# Ignore sass caching
+.sass-cache

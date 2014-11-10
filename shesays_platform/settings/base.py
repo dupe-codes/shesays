@@ -101,6 +101,7 @@ WSGI_APPLICATION = 'shesays_platform.wsgi.application'
 """
 TODO: Move this into local_dev settings file
 removing for now as I try to figure out deploying...
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -108,7 +109,6 @@ DATABASES = {
         'USER': 'shesays'
     }
 }
-"""
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

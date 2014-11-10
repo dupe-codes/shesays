@@ -26,14 +26,17 @@ body {
   #company-input input {
     background-color: transparent;
     outline: 0;
-    border: 0; }
+    border: 0;
+    border-bottom: 2px solid #FF0080; }
+  #company-input .bxslider {
+    display: none;
+    padding-left: 0; }
 
 #company-prefix {
   position: absolute; }
 
 #company-name {
   position: absolute;
-  margin-left: 35px;
   z-index: 20; }
 
 .form {

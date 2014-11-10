@@ -1,18 +1,32 @@
- // Initialize varibles
+  // TODO: Clean up this file: put into an iffy, clean up indentation
+  
+   // Initialize varibles
   var $window = $(window);
   var $companyInput = $('#company-name'); // Input for username
   var $slider = $('.bxslider'); 
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
-
-
+  
+  //bxSlider initialization with options
+  $(document).ready(function(){
+    $('.bxslider').show();
+    $companyInput.focus();
+    $slider.bxSlider({
+      mode:'vertical',
+      hideControlOnEnd: true,
+      infiniteLoop: true,
+      auto: true,
+      pager: false,
+      speed: 500,
+      useCSS:false,
+      touchEnabled: true,
+      controls: false
+    });
+  });
   // Prompt for setting a username
   var companyName;
   var clearedCompany = false;
-  var j = jQuery.noConflict();
-  j(document).ready(function () {
-     // j('.bxslider').bxSlider();
-   });
+
   // Sets the client's companyName
   function setCompanyName() {
     companyName = cleanInput($companyInput.html().trim());
@@ -55,8 +69,3 @@
   $companyInput.click(function(event){
     $('.bxslider').css("color", "#222");
   });
-
-  window.onload = function() {
-    // $("#company-name").focus();
-    $slider.bxSlider();
-  };
