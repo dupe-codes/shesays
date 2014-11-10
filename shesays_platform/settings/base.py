@@ -42,6 +42,8 @@ THIRD_PARTY_APPS = (
     'bootstrapform',
     'django_forms_bootstrap',
     'djcelery',
+    'mailer',
+    'djcelery_email',
 )
 
 DJANGO_DEFAULT_APPS = (
@@ -141,3 +143,14 @@ LOGGING = {
         },
     },
 }
+
+# Configuration for async tasks
+import djcelery
+djcelery.setup_loader()
+
+# Email configuration
+EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
+DEFAULT_FROM_EMAIL = 'info@shesays.co'
+
+# Email broker settings
+BROKER_URL = 'amqp://guest:guest@localhost:5672/'

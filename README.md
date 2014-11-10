@@ -29,3 +29,8 @@ To get setup on cloud9 http://c9.io and use sqlite:
 6. `python manage.py syncdb --settings=shesays_platform.settings.development`
 7. `python manage.py runserver $IP:$PORT --settings=shesays_platform.settings.development`
 8. Begin hacking!
+
+For Celery/Email Sending
+========================
+1) Need to run celery with command: `celery -A shesays_platform worker -l info`
+2) Configure email SMTP settings in `shesays_platform/settings/dev.py`

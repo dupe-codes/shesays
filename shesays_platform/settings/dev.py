@@ -2,6 +2,8 @@
 Settings for local development
 """
 
+from base import INSTALLED_APPS
+
 DEBUG = True
 
 DATABASES = {
@@ -12,4 +14,17 @@ DATABASES = {
     },
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+# Development message queue
+BROKER_URL = 'django://'
+INSTALLED_APPS += ('kombu.transport.django',)
+
+# Settings for the smtp email service
+# Right now I'm using my own gmail account, but in production
+# we should use Amazon SES
+# Also, need to look in to a better way of mocking email
+# sending in development
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'njdupp@gmail.com'
+EMAIL_HOST_PASSWORD = EMAIL_PASSWORD_GOES_HERE
+EMAIL_PORT = 587
