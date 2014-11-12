@@ -1,0 +1,22 @@
+{% extends 'site_base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block title %}SheSays: Account {% endblock %}
+
+{% block content %}
+<div class="authform">
+  <div class="row">
+    <div class="span8">
+      <form method="POST" action="{% url 'account_settings' %}">
+        <legend>Account</legend>
+        {% csrf_token %}
+        {{ form|as_bootstrap }}
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

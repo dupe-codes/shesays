@@ -26,5 +26,8 @@ INSTALLED_APPS += ('kombu.transport.django',)
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'njdupp@gmail.com'
-EMAIL_HOST_PASSWORD = PASSWORD_GOES_HERE
+EMAIL_HOST_PASSWORD = 'penguincomputerdesignersailing'
 EMAIL_PORT = 587
+
+# Set dev domain to localhost
+DOMAIN_NAME = 'localhost:8000'

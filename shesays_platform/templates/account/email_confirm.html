@@ -1,0 +1,22 @@
+{% extends 'site_base.html' %}
+
+{% block title %} SheSays: Confirm Email {% endblock %}
+
+{% endblock %}
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <form method="POST" action="{% url 'account_confirm_email' key=confirmation.key %}" class="form-horizontal">
+          <legend>Confirm Email</legend>
+          <fieldset>
+            {% csrf_token %}
+            <p>Confirm email address <b>{{ email }}</b>?</p>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
