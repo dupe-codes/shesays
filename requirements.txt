@@ -7,7 +7,9 @@ dj-static==0.0.6
 django-appconf==0.6
 django-bootstrap-form==3.1
 django-celery==3.1.16
+django-celery-email==1.0.4
 django-forms-bootstrap==3.0.1
+django-mailer==0.1.0
 django-user-accounts==1.0
 kombu==3.0.23
 pinax-theme-bootstrap==5.5.1
