@@ -3,10 +3,11 @@ Defines views for the email invitation system
 """
 
 from django.shortcuts import redirect
-from django.core.mail import send_mail
+from mailer import send_mail
 from django.conf import settings
 
 from shesays_platform.apps.utilities.view_utils import render_response
+from .tasks import send_queued_emails
 
 def new_invite(request):
     """ Renders the template for sending an invitation """
@@ -17,6 +18,6 @@ def send_invite(request):
     print 'Sending email...'
 
     # Send a silly test email
-    send_mail('Waddupp', 'Hi Sukhi,\nI just sent this from our app. How nifty.\n\n Best Regards,\nSheSaysCo',
-        settings.DEFAULT_FROM_EMAIL, ['sgulati3@stanford.edu', 'njdupp@gmail.com'], fail_silently=False)
+    send_mail('Hello', 'Hi, this is a test', settings.DEFAULT_FROM_EMAIL, ['njdupp@gmail.com'], fail_silently=False)
+    send_queued_emails.delay()
     return redirect('/')

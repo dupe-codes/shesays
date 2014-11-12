@@ -32,5 +32,6 @@ To get setup on cloud9 http://c9.io and use sqlite:
 
 For Celery/Email Sending
 ========================
-1) Need to run celery with command: `celery -A shesays_platform worker -l info`
-2) Configure email SMTP settings in `shesays_platform/settings/dev.py`
+
+1. Need to run celery with command: `celery -A shesays_platform worker -l info`
+2. Configure email SMTP settings in `shesays_platform/settings/dev.py`
